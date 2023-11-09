@@ -108,4 +108,18 @@ public class StudentTest {
 
     }
 
+    @Test
+    public void testToString(){
+        String firstName = "Tam";
+        String lastName = "Doan";
+        Double[] testScores = new Double[]{10.0, 12.0, 20.0};
+
+        Student student = new Student(firstName, lastName, testScores);
+        String expected = "Student Name: " + firstName + " " + lastName +"\n"+
+                "> Average Score: " + student.getAverageExamScore() + "\n"+
+                "> Exam Scores:\n   Exam 1 -> 10\n   Exam 2 -> 12\n   Exam 3 -> 20";
+
+        Assert.assertEquals(expected, student.toString());
+    }
+
 }

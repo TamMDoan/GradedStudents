@@ -63,4 +63,17 @@ public class Student {
         return sum / examScores.size();
     }
 
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Student Name: " + this.firstName + " " + this.lastName);
+        sb.append("\n> Average Score: " + getAverageExamScore());
+        sb.append("\n> Exam Scores:");
+        for(int i = 0; i < examScores.size(); i++){
+            sb.append("\n   Exam " + (i +1) + " -> " + examScores.get(i).intValue());
+        }
+
+        return sb.toString();
+    }
+
 }
