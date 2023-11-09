@@ -48,4 +48,19 @@ public class Student {
         this.examScores.add(score);
     }
 
+    public void setExamScore(int examNumber, Double newScore){
+        examScores.remove(examScores.get(examNumber-1));
+        examScores.add(examNumber - 1, newScore);
+    }
+
+    public Double getAverageExamScore(){
+        Double sum = 0.0;
+        for(Double score : examScores){
+            sum += score;
+        }
+        String str = "hello world!";
+
+        return sum / examScores.size();
+    }
+
 }

@@ -88,6 +88,23 @@ public class StudentTest {
         Double[] testScores = new Double[]{10.0, 12.0, 20.0};
 
         Student student = new Student(firstName, lastName, testScores);
+        student.setExamScore(1, 100.0);
+        String expected = "Exam 1 -> 100\nExam 2 -> 12\nExam 3 -> 20\n";
+
+        Assert.assertEquals(expected, student.getExamScores());
+
+    }
+
+    @Test
+    public void getAverageExamScore(){
+        String firstName = "Tam";
+        String lastName = "Doan";
+        Double[] testScores = new Double[]{10.0, 12.0, 20.0};
+
+        Student student = new Student(firstName, lastName, testScores);
+        Double expected = (10.0+12.0+20.0)/3;
+
+        Assert.assertEquals(expected, student.getAverageExamScore());
 
     }
 
